@@ -1,10 +1,10 @@
 const express = require('express');
 const estudantesRoutes = require('./routes/estudantesRoutes');
 const mongoose = require('mongoose');
-require('dotenv').config({path: 'Modulo 9/Atividades/atividade2/src/.env'});
+require('dotenv').config();
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 
 mongoose.connect(process.env.MONGO_URL)
