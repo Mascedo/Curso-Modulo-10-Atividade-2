@@ -34,14 +34,14 @@ GET /estudantes/busca?nome=mascedo → Busca um estudante por nome
 ## Modelos:
 
  Estudante
-
+```
  {
     nome: String,
     matricula: String,
     curso: String,
     ano: String
  }
-
+```
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT.  
