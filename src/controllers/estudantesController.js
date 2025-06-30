@@ -4,7 +4,16 @@ const estudantesService = require("../services/estudantesService")
 exports.mostrarEstudantes = async (req, res) => {
     try{
         const estudantes = await estudantesService.mostrar()
-        res.status(200).json(estudantes)
+
+                const estudantesFormatados = estudantes.map(estudantes  => {
+            return {
+                ...estudantes.toObject(),
+                id: estudantes._id,
+                _id: undefined
+            }
+        })
+
+        res.status(200).json(estudantesFormatados)
     } catch (erro){
         res.status(500).json({erro: "Erro ao mostrar estudante", detalhes: erro.message})
     }
